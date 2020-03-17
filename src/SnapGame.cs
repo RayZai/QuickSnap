@@ -25,18 +25,20 @@ namespace CardGames
 			if (SwinGame.KeyTyped (KeyCode.vk_SPACE))
 			{
 				myGame.Start ();
-<<<<<<< HEAD
-=======
 			}
 			if (myGame.IsStarted) {
 				if (SwinGame.KeyTyped (KeyCode.vk_LSHIFT) && SwinGame.KeyTyped (KeyCode.vk_RSHIFT)) {
-
+					SwinGame.LoadSoundEffectNamed ("Slap2", "Resources/sounds/slap1.mp3");
+					SwinGame.PlaySoundEffect ("Slap2");
 				} else if (SwinGame.KeyTyped (KeyCode.vk_LSHIFT)) {
 					myGame.PlayerHit (0);
+					SwinGame.LoadSoundEffectNamed ("Slap1", "Resources/sounds/slap1.mp3");
+					SwinGame.PlaySoundEffect ("Slap1");
 				} else if (SwinGame.KeyTyped (KeyCode.vk_RSHIFT)) {
 					myGame.PlayerHit (1);
+					SwinGame.LoadSoundEffectNamed ("Slap1", "Resources/sounds/slap1.mp3");
+					SwinGame.PlaySoundEffect ("Slap1");
 				}
->>>>>>> add-player-hit
 			}
 		}
 
@@ -52,7 +54,7 @@ namespace CardGames
 			Card top = myGame.TopCard;
 			if (top != null)
 			{	
-				SwinGame.LoadFontNamed ("GameFont", "Chunkfive.otf", 24);
+				SwinGame.LoadFontNamed ("GameFont", "Chunk-Five-Print.otf", 24);
 				SwinGame.DrawText ("Top Card is " + top.ToString (), Color.White, 0, 30);
 				SwinGame.DrawText ("Player 1 score: " + myGame.Score(0), Color.White, 0, 30);
 				SwinGame.DrawText ("Player 2 score: " + myGame.Score(1), Color.White, 0, 30);
